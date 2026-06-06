@@ -24,7 +24,7 @@ html, body {
 }
 
 body {
-    background: rgba(0, 0, 0, 0.48);
+    background: transparent;
 }
 
 /* PAINEL */
@@ -33,7 +33,7 @@ body {
     left: 2vw;
     top: 4.6vh;
 
-    width: 20.2vw;
+    width: 26vw;
     height: 78.5vh;
 
     background: #171719;
@@ -44,16 +44,16 @@ body {
 /* BOTAO X */
 #close-btn {
     position: absolute;
-    right: 0.35vw;
-    top: 0.35vh;
+    right: 0.45vw;
+    top: 0.45vh;
 
-    width: 0.9vw;
-    height: 0.9vw;
+    width: 1.15vw;
+    height: 1.15vw;
 
     border: 1px solid rgba(255,255,255,0.18);
-    color: rgba(255,255,255,0.35);
-    font-size: 0.75vw;
-    line-height: 0.78vw;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.9vw;
+    line-height: 1vw;
     text-align: center;
     cursor: pointer;
 }
@@ -62,30 +62,30 @@ body {
 .header {
     position: relative;
     width: 100%;
-    height: 6.6vh;
-    padding-left: 1.55vw;
+    height: 7vh;
+    padding-left: 1.75vw;
     padding-top: 1.35vh;
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .header h1 {
-    font-size: 1.05vw;
+    font-size: 1.3vw;
     font-weight: 800;
     color: #e7e7e7;
 }
 
 .header p {
-    font-size: 0.42vw;
+    font-size: 0.55vw;
     color: rgba(255,255,255,0.38);
     margin-top: 0.1vh;
 }
 
 .price {
     position: absolute;
-    right: 1.65vw;
-    top: 3.45vh;
+    right: 1.85vw;
+    top: 3.65vh;
 
-    font-size: 0.48vw;
+    font-size: 0.62vw;
     color: rgba(255,255,255,0.78);
 }
 
@@ -96,11 +96,11 @@ body {
 /* LISTA */
 .items {
     width: 100%;
-    padding: 0.55vh 1.55vw 0 1.55vw;
+    padding: 0.55vh 1.75vw 0 1.75vw;
 }
 
 .category-name {
-    font-size: 0.54vw;
+    font-size: 0.68vw;
     font-weight: 800;
     color: rgba(255,255,255,0.75);
     margin-bottom: 0.35vh;
@@ -112,19 +112,19 @@ body {
     width: 100%;
     height: 5.35vh;
     background: #07080a;
-    border-radius: 0.25vw;
+    border-radius: 0.3vw;
     display: flex;
     align-items: center;
 }
 
 /* QUADRADO AZUL PRA VOCÊ BOTAR PNG */
 .icon {
-    width: 2.15vw;
+    width: 2.55vw;
     height: 4.15vh;
     background: #168ed0;
-    border-radius: 0.25vw;
+    border-radius: 0.3vw;
 
-    margin-left: 0.35vw;
+    margin-left: 0.45vw;
 
     display: flex;
     align-items: center;
@@ -132,8 +132,8 @@ body {
 }
 
 .icon img {
-    width: 1.15vw;
-    height: 1.15vw;
+    width: 1.35vw;
+    height: 1.35vw;
     object-fit: contain;
 }
 
@@ -141,11 +141,8 @@ body {
 .controls {
     position: absolute;
 
-    /* começa depois do quadrado azul */
-    left: 3.35vw;
-
-    /* vai até o fim do retângulo preto */
-    right: 0.75vw;
+    left: 4vw;
+    right: 0.9vw;
 
     top: 50%;
     transform: translateY(-50%);
@@ -153,14 +150,14 @@ body {
     height: 2vh;
 
     display: grid;
-    grid-template-columns: 1.85vw 1fr 1.85vw;
+    grid-template-columns: 2.15vw 1fr 2.15vw;
     align-items: center;
 }
 
 /* SETAS */
 .arrow {
-    width: 1.85vw;
-    height: 1.55vh;
+    width: 2.15vw;
+    height: 1.8vh;
 
     border-radius: 999px;
     background: rgba(255,255,255,0.08);
@@ -170,7 +167,7 @@ body {
     justify-content: center;
 
     color: #ffffff;
-    font-size: 0.82vw;
+    font-size: 1vw;
     font-weight: 900;
     line-height: 1;
 
@@ -185,7 +182,7 @@ body {
     width: 100%;
     text-align: center;
 
-    font-size: 0.62vw;
+    font-size: 0.8vw;
     font-weight: 900;
     color: white;
 }
@@ -196,7 +193,7 @@ body {
     left: 2vw;
     top: 85.1vh;
 
-    width: 20.2vw;
+    width: 26vw;
     height: 5.2vh;
 
     border: none;
@@ -205,7 +202,7 @@ body {
     background: #0c0c0e;
     color: white;
 
-    font-size: 0.85vw;
+    font-size: 1vw;
     font-weight: 900;
     cursor: pointer;
 }
@@ -216,45 +213,42 @@ body {
 
 @media (max-width: 900px), (max-height: 500px) {
     #shop-box {
-        left: 12vw;
+        left: 2vw;
         top: 4.5vh;
-        width: 20.5vw;
+        width: 26vw;
         height: 78.5vh;
     }
 
     #buy-btn {
-        left: 12vw;
+        left: 2vw;
         top: 85.2vh;
-        width: 20.5vw;
+        width: 26vw;
         height: 5.2vh;
+        font-size: 1vw;
     }
 
     .header h1 {
-        font-size: 1.1vw;
+        font-size: 1.35vw;
     }
 
     .header p {
-        font-size: 0.46vw;
+        font-size: 0.58vw;
     }
 
     .price {
-        font-size: 0.52vw;
+        font-size: 0.65vw;
     }
 
     .category-name {
-        font-size: 0.6vw;
-    }
-
-    .counter {
         font-size: 0.7vw;
     }
 
-    .arrow {
-        font-size: 0.95vw;
+    .counter {
+        font-size: 0.85vw;
     }
 
-    #buy-btn {
-        font-size: 0.9vw;
+    .arrow {
+        font-size: 1.05vw;
     }
 }
 </style>
@@ -285,7 +279,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('bones', -1)">&lt;</div>
-                <div class="counter" id="count-bones">4/5</div>
+                <div class="counter" id="count-bones">0/6</div>
                 <div class="arrow" onclick="mudarItem('bones', 1)">&gt;</div>
             </div>
         </div>
@@ -298,7 +292,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('mascaras', -1)">&lt;</div>
-                <div class="counter" id="count-mascaras">4/5</div>
+                <div class="counter" id="count-mascaras">0/5</div>
                 <div class="arrow" onclick="mudarItem('mascaras', 1)">&gt;</div>
             </div>
         </div>
@@ -311,7 +305,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('oculos', -1)">&lt;</div>
-                <div class="counter" id="count-oculos">1/10</div>
+                <div class="counter" id="count-oculos">0/8</div>
                 <div class="arrow" onclick="mudarItem('oculos', 1)">&gt;</div>
             </div>
         </div>
@@ -324,7 +318,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('camisas', -1)">&lt;</div>
-                <div class="counter" id="count-camisas">8/34</div>
+                <div class="counter" id="count-camisas">0/69</div>
                 <div class="arrow" onclick="mudarItem('camisas', 1)">&gt;</div>
             </div>
         </div>
@@ -337,7 +331,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('mochilas', -1)">&lt;</div>
-                <div class="counter" id="count-mochilas">0/7</div>
+                <div class="counter" id="count-mochilas">0/8</div>
                 <div class="arrow" onclick="mudarItem('mochilas', 1)">&gt;</div>
             </div>
         </div>
@@ -350,7 +344,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('calcas', -1)">&lt;</div>
-                <div class="counter" id="count-calcas">0/21</div>
+                <div class="counter" id="count-calcas">0/37</div>
                 <div class="arrow" onclick="mudarItem('calcas', 1)">&gt;</div>
             </div>
         </div>
@@ -363,7 +357,7 @@ body {
 
             <div class="controls">
                 <div class="arrow" onclick="mudarItem('tenis', -1)">&lt;</div>
-                <div class="counter" id="count-tenis">0/25</div>
+                <div class="counter" id="count-tenis">0/33</div>
                 <div class="arrow" onclick="mudarItem('tenis', 1)">&gt;</div>
             </div>
         </div>
