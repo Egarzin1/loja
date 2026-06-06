@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Roupas</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    color: white;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.48);
+}
+
+/* PAINEL */
+#shop-box {
+    position: absolute;
+    left: 2vw;
+    top: 4.6vh;
+
+    width: 20.2vw;
+    height: 78.5vh;
+
+    background: #171719;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: white;
+}
+
+/* BOTAO X */
+#close-btn {
+    position: absolute;
+    right: 0.35vw;
+    top: 0.35vh;
+
+    width: 0.9vw;
+    height: 0.9vw;
+
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.35);
+    font-size: 0.75vw;
+    line-height: 0.78vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* TOPO */
+.header {
+    position: relative;
+    width: 100%;
+    height: 6.6vh;
+    padding-left: 1.55vw;
+    padding-top: 1.35vh;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header h1 {
+    font-size: 1.05vw;
+    font-weight: 800;
+    color: #e7e7e7;
+}
+
+.header p {
+    font-size: 0.42vw;
+    color: rgba(255,255,255,0.38);
+    margin-top: 0.1vh;
+}
+
+.price {
+    position: absolute;
+    right: 1.65vw;
+    top: 3.45vh;
+
+    font-size: 0.48vw;
+    color: rgba(255,255,255,0.78);
+}
+
+.price b {
+    color: white;
+}
+
+/* LISTA */
+.items {
+    width: 100%;
+    padding: 0.55vh 1.55vw 0 1.55vw;
+}
+
+.category-name {
+    font-size: 0.54vw;
+    font-weight: 800;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0.35vh;
+    margin-top: 0.8vh;
+}
+
+.item-row {
+    position: relative;
+    width: 100%;
+    height: 5.35vh;
+    background: #07080a;
+    border-radius: 0.25vw;
+    display: flex;
+    align-items: center;
+}
+
+/* QUADRADO AZUL PRA VOCÊ BOTAR PNG */
+.icon {
+    width: 2.15vw;
+    height: 4.15vh;
+    background: #168ed0;
+    border-radius: 0.25vw;
+
+    margin-left: 0.35vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon img {
+    width: 1.15vw;
+    height: 1.15vw;
+    object-fit: contain;
+}
+
+/* ÁREA TODA DEPOIS DO QUADRADO AZUL */
+.controls {
+    position: absolute;
+
+    /* começa depois do quadrado azul */
+    left: 3.35vw;
+
+    /* vai até o fim do retângulo preto */
+    right: 0.75vw;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 2vh;
+
+    display: grid;
+    grid-template-columns: 1.85vw 1fr 1.85vw;
+    align-items: center;
+}
+
+/* SETAS */
+.arrow {
+    width: 1.85vw;
+    height: 1.55vh;
+
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 0.82vw;
+    font-weight: 900;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.arrow:active {
+    transform: scale(0.92);
+}
+
+.counter {
+    width: 100%;
+    text-align: center;
+
+    font-size: 0.62vw;
+    font-weight: 900;
+    color: white;
+}
+
+/* BOTAO ADQUIRIR SEPARADO DO MENU */
+#buy-btn {
+    position: absolute;
+    left: 2vw;
+    top: 85.1vh;
+
+    width: 20.2vw;
+    height: 5.2vh;
+
+    border: none;
+    outline: none;
+
+    background: #0c0c0e;
+    color: white;
+
+    font-size: 0.85vw;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#buy-btn:active {
+    background: #161619;
+}
+
+@media (max-width: 900px), (max-height: 500px) {
+    #shop-box {
+        left: 12vw;
+        top: 4.5vh;
+        width: 20.5vw;
+        height: 78.5vh;
+    }
+
+    #buy-btn {
+        left: 12vw;
+        top: 85.2vh;
+        width: 20.5vw;
+        height: 5.2vh;
+    }
+
+    .header h1 {
+        font-size: 1.1vw;
+    }
+
+    .header p {
+        font-size: 0.46vw;
+    }
+
+    .price {
+        font-size: 0.52vw;
+    }
+
+    .category-name {
+        font-size: 0.6vw;
+    }
+
+    .counter {
+        font-size: 0.7vw;
+    }
+
+    .arrow {
+        font-size: 0.95vw;
+    }
+
+    #buy-btn {
+        font-size: 0.9vw;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="shop-box">
+
+    <div id="close-btn" onclick="fecharMenu()">×</div>
+
+    <div class="header">
+        <h1>Roupas</h1>
+        <p>Deixe seu personagem no estilo!</p>
+
+        <div class="price">
+            Preço Total: <b id="totalPrice">500R$</b>
+        </div>
+    </div>
+
+    <div class="items">
+
+        <div class="category-name">Bones</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-bones">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('bones', -1)">&lt;</div>
+                <div class="counter" id="count-bones">4/5</div>
+                <div class="arrow" onclick="mudarItem('bones', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Mascaras</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-mascaras">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('mascaras', -1)">&lt;</div>
+                <div class="counter" id="count-mascaras">4/5</div>
+                <div class="arrow" onclick="mudarItem('mascaras', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Oculos</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-oculos">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('oculos', -1)">&lt;</div>
+                <div class="counter" id="count-oculos">1/10</div>
+                <div class="arrow" onclick="mudarItem('oculos', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Camisas</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-camisas">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('camisas', -1)">&lt;</div>
+                <div class="counter" id="count-camisas">8/34</div>
+                <div class="arrow" onclick="mudarItem('camisas', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Mochilas</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-mochilas">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('mochilas', -1)">&lt;</div>
+                <div class="counter" id="count-mochilas">0/7</div>
+                <div class="arrow" onclick="mudarItem('mochilas', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Calças & Shorts</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-calcas">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('calcas', -1)">&lt;</div>
+                <div class="counter" id="count-calcas">0/21</div>
+                <div class="arrow" onclick="mudarItem('calcas', 1)">&gt;</div>
+            </div>
+        </div>
+
+        <div class="category-name">Tenis & Chinelos</div>
+        <div class="item-row">
+            <div class="icon">
+                <img src="" id="icon-tenis">
+            </div>
+
+            <div class="controls">
+                <div class="arrow" onclick="mudarItem('tenis', -1)">&lt;</div>
+                <div class="counter" id="count-tenis">0/25</div>
+                <div class="arrow" onclick="mudarItem('tenis', 1)">&gt;</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<button id="buy-btn" onclick="adquirirRoupas()">Adquirir</button>
+
+<script>
+const BROWSER_ID = 60;
+const EVENT_TYPE = 1;
+
+const roupas = {
+    bones: { atual: 0, max: 5, preco: 50 },
+    mascaras: { atual: 0, max: 5, preco: 50 },
+    oculos: { atual: 0, max: 10, preco: 50 },
+    camisas: { atual: 0, max: 34, preco: 100 },
+    mochilas: { atual: 0, max: 7, preco: 100 },
+    calcas: { atual: 0, max: 21, preco: 100 },
+    tenis: { atual: 0, max: 25, preco: 50 }
+};
+
+function sendCEF(eventName, value) {
+    const payload = eventName + "|" + value;
+
+    console.log("[ROUPAS SEND]", payload);
+
+    if (window.Android && window.Android.sendEvent) {
+        window.Android.sendEvent(BROWSER_ID, EVENT_TYPE, payload);
+        return;
+    }
+
+    if (window.CefBrowser && window.CefBrowser.sendEvent) {
+        window.CefBrowser.sendEvent(BROWSER_ID, EVENT_TYPE, payload);
+        return;
+    }
+
+    console.log("[ROUPAS] Nenhum bridge encontrado:", payload);
+}
+
+function atualizarContador(tipo) {
+    const el = document.getElementById("count-" + tipo);
+
+    if (!el) {
+        return;
+    }
+
+    el.innerText = roupas[tipo].atual + "/" + roupas[tipo].max;
+}
+
+function atualizarPreco() {
+    let total = 0;
+
+    for (const tipo in roupas) {
+        if (roupas[tipo].atual > 0) {
+            total += roupas[tipo].preco;
+        }
+    }
+
+    document.getElementById("totalPrice").innerText = total + "R$";
+}
+
+function mudarItem(tipo, direcao) {
+    if (!roupas[tipo]) {
+        return;
+    }
+
+    roupas[tipo].atual += direcao;
+
+    if (roupas[tipo].atual < 0) {
+        roupas[tipo].atual = 0;
+    }
+
+    if (roupas[tipo].atual > roupas[tipo].max) {
+        roupas[tipo].atual = roupas[tipo].max;
+    }
+
+    atualizarContador(tipo);
+    atualizarPreco();
+
+    sendCEF("roupa_change", tipo + ":" + roupas[tipo].atual);
+}
+
+function adquirirRoupas() {
+    const dados = {
+        bones: roupas.bones.atual,
+        mascaras: roupas.mascaras.atual,
+        oculos: roupas.oculos.atual,
+        camisas: roupas.camisas.atual,
+        mochilas: roupas.mochilas.atual,
+        calcas: roupas.calcas.atual,
+        tenis: roupas.tenis.atual
+    };
+
+    sendCEF("roupa_buy", JSON.stringify(dados));
+}
+
+function fecharMenu() {
+    sendCEF("roupa_close", 1);
+}
+
+function carregarEstadoDaUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const estado = params.get("estado");
+
+    if (!estado) {
+        return;
+    }
+
+    const partes = estado.split("/");
+
+    const ordem = [
+        "bones",
+        "mascaras",
+        "oculos",
+        "camisas",
+        "mochilas",
+        "calcas",
+        "tenis"
+    ];
+
+    for (let i = 0; i < ordem.length; i++) {
+        const tipo = ordem[i];
+
+        if (!roupas[tipo]) {
+            continue;
+        }
+
+        if (typeof partes[i] === "undefined") {
+            continue;
+        }
+
+        let valor = parseInt(partes[i]);
+
+        if (isNaN(valor)) {
+            valor = 0;
+        }
+
+        if (valor < 0) {
+            valor = 0;
+        }
+
+        if (valor > roupas[tipo].max) {
+            valor = roupas[tipo].max;
+        }
+
+        roupas[tipo].atual = valor;
+        atualizarContador(tipo);
+    }
+
+    atualizarPreco();
+}
+
+window.onload = function() {
+    carregarEstadoDaUrl();
+
+    for (const tipo in roupas) {
+        atualizarContador(tipo);
+    }
+
+    atualizarPreco();
+};
+</script>
+
+</body>
+</html>
