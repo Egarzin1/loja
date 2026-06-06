@@ -429,11 +429,13 @@ function mudarItem(tipo, direcao) {
 
     roupas[tipo].atual += direcao;
 
-    if (roupas[tipo].atual < 0) {
+    // Se passar do máximo, volta pro 0
+    if (roupas[tipo].atual > roupas[tipo].max) {
         roupas[tipo].atual = 0;
     }
 
-    if (roupas[tipo].atual > roupas[tipo].max) {
+    // Se voltar antes do 0, vai pro máximo
+    if (roupas[tipo].atual < 0) {
         roupas[tipo].atual = roupas[tipo].max;
     }
 
